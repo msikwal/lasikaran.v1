@@ -1,0 +1,63 @@
+Time : 16:00:40
+SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '2014-03-09-8' for key 'child_id'
+Raw SQL : INSERT INTO child_details(child_name,birth_date,parent_id,gender) VALUES(:child_name,:birth_date,:parent_id,:gender)
+
+Time : 16:00:03
+SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '2014-03-09-8' for key 'child_id'
+Raw SQL : INSERT INTO child_details(child_name,birth_date,parent_id,gender) VALUES(:child_name,:birth_date,:parent_id,:gender)
+
+Time : 15:58:32
+SQLSTATE[HY093]: Invalid parameter number: parameter was not defined
+Raw SQL : SELECT * FROM  child_details WHERE  birth_date= :birth_date AND parent_id = :parent_id
+
+Time : 15:58:13
+SQLSTATE[HY000]: General error: 2031 
+Raw SQL : SELECT * FROM  child_details WHERE  birth_date= :birth_date AND parent_id = :parent_id
+
+Time : 15:58:10
+SQLSTATE[HY000]: General error: 2031 
+Raw SQL : SELECT * FROM  child_details WHERE  birth_date= :birth_date AND parent_id = :parent_id
+
+Time : 15:44:25
+SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '2014-03-09-8' for key 'child_id'
+Raw SQL : INSERT INTO child_details(child_name,birth_date,parent_id,gender) VALUES(:child_name,:birth_date,:parent_id,:gender)
+
+Time : 15:38:32
+SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '8-1-child' for key 'user_id'
+Raw SQL : INSERT INTO msg_schedule_master(user_id,vac_id,msg_type,start_date,end_date) VALUES(:user_id,:vac_id,:msg_type,:start_date,:end_date)
+
+Time : 15:26:08
+SQLSTATE[HY093]: Invalid parameter number: parameter was not defined
+Raw SQL : UPDATE user_details set first_name = :first_name,last_name = :last_name,address = :address  where user_id = :uid
+
+Time : 14:55:04
+SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '8-1' for key 'user_id'
+Raw SQL : INSERT INTO msg_schedule_master(user_id,vac_id,msg_type,start_date,end_date) VALUES(:user_id,:vac_id,:msg_type,:start_date,:end_date)
+
+Time : 14:54:38
+SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '8-1' for key 'user_id'
+Raw SQL : INSERT INTO msg_schedule_master(user_id,vac_id,msg_type,start_date,end_date) VALUES(:user_id,:vac_id,:msg_type,:start_date,:end_date)
+
+Time : 14:54:38
+SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '8-1' for key 'user_id'
+Raw SQL : INSERT INTO msg_schedule_master(user_id,vac_id,msg_type,start_date,end_date) VALUES(:user_id,:vac_id,:msg_type,:start_date,:end_date)
+
+Time : 14:54:38
+SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '8-1' for key 'user_id'
+Raw SQL : INSERT INTO msg_schedule_master(user_id,vac_id,msg_type,start_date,end_date) VALUES(:user_id,:vac_id,:msg_type,:start_date,:end_date)
+
+Time : 14:54:19
+SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '8-1' for key 'user_id'
+Raw SQL : INSERT INTO msg_schedule_master(user_id,vac_id,msg_type,start_date,end_date) VALUES(:user_id,:vac_id,:msg_type,:start_date,:end_date)
+
+Time : 14:54:17
+SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '8-1' for key 'user_id'
+Raw SQL : INSERT INTO msg_schedule_master(user_id,vac_id,msg_type,start_date,end_date) VALUES(:user_id,:vac_id,:msg_type,:start_date,:end_date)
+
+Time : 14:52:23
+SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '8-1' for key 'user_id'
+Raw SQL : INSERT INTO msg_schedule_master(user_id,vac_id,msg_type,start_date,end_date) VALUES(:user_id,:vac_id,:msg_type,:start_date,:end_date)
+
+Time : 14:52:12
+SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '2014-03-13-8' for key 'child_id'
+Raw SQL : INSERT INTO child_details(child_name,birth_date,parent_id,gender) VALUES(:child_name,:birth_date,:parent_id,:gender)

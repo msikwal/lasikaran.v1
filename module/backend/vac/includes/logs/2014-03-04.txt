@@ -1,0 +1,15 @@
+Time : 16:25:19
+SQLSTATE[HY093]: Invalid parameter number: parameter was not defined
+Raw SQL : UPDATE doc_details set first_name = :first_name1,last_name = :last_name,email = :email,text_msg = :text_msg where mobile = :mobile
+
+Time : 16:25:01
+SQLSTATE[42S02]: Base table or view not found: 1146 Table 'lasikaran.doc_details1' doesn't exist
+Raw SQL : UPDATE doc_details1 set first_name = :first_name,last_name = :last_name,email = :email,text_msg = :text_msg where mobile = :mobile
+
+Time : 16:22:00
+SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ': email,text_msg : text_msg' at line 1
+Raw SQL : UPDATE doc_details set first_name = :first_name,last_name = :last_name,email : email,text_msg : text_msg
+
+Time : 16:17:41
+SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ': email,text_msg : text_msg' at line 1
+Raw SQL : UPDATE doc_details set first_name = :first_name,last_name = :last_name,email : email,text_msg : text_msg
