@@ -19,30 +19,18 @@ define(function(require){
 			},	
 			validateHandler  :function(e,self){
 				var inputArr = $("#c_frm").serializeArray();
-				if(self.panel.validateInputs(inputArr)){
-					var url = "http://localhost/vac/json/child.php?mode=save" 
-						$.ajax({
-							   	type: 'GET',
-							   	crossDomain: true,
-							    url: url,
-							    data : inputArr,
-							    async: false,
-							    jsonpCallback: 'jsonCallback',
-							    contentType: "application/json",
-							    dataType: 'jsonp',
-							    success: function(json) {
-							       if(json.status==1){
-							    	   showPopup("Record Added successfully!");
-							       }else if(json.status==2){
-							    	   showPopup("Already Added!");
-							       }else{
-							    	   showPopup("Error occoured!");
-							       }
-							    },
-							    error: function(jqXHR, textStatus, errorThrown) {
-							    	  console.log(textStatus, errorThrown);
-							   	}
-						})
+				if(self.panel.util.validateInputs(inputArr)){
+					var url = "http://localhost/vac/json/child.php?mode=save";
+					self.panel.util.exchangeDataFromServer('GET',url,inputArr,function(json) {
+					       if(json.status==1){
+					    	   showPopup("Record Added successfully!");
+					       }else if(json.status==2){
+					    	   showPopup("Already Added!");
+					       }else{
+					    	   showPopup("Error occoured!");
+					       }
+					    }
+					);
 				}
 			}
 	};

@@ -1,4 +1,5 @@
 define(function(require){
+	var	utilObj	= require("./utility");
 	var tmpl_h = require("text!../html/user.html");
 	var userDetails = function() {};
 	userDetails.prototype = {
@@ -24,67 +25,31 @@ define(function(require){
 			},
 			validateHandler  :function(e,self){
 				var inputArr = $("#user_frm").serializeArray();
-				if(self.validateInputs(inputArr)){
-					var url = "http://localhost/vac/json/user.php?mode=update"; 
-					$.ajax({
-						   	type: 'GET',
-						   	crossDomain: true,
-						    url: url,
-						    data : inputArr,
-						    async: false,
-						    jsonpCallback: 'jsonCallback',
-						    contentType: "application/json",
-						    dataType: 'jsonp',
-						    success: function(json) {
-						       if(json.status==1){
-						    	   showPopup("Updated successfully!");
-						       }else if(json.status==0){
-						    	   showPopup("Already Updated!");
-						       }else{
-						    	   showPopup("Invalid Credentials !");
-						       }
-						    },
-						    error: function(jqXHR, textStatus, errorThrown) {
-						    	  console.log(textStatus, errorThrown);
-						   	}
-					})
+				if(utilObj.validateInputs(inputArr)){
+					var url = "http://localhost/vac/json/user.php?mode=update";
+					utilObj.exchangeDataFromServer('GET',url,inputArr,function(json) {
+					       if(json.status==1){
+					    	   showPopup("Updated successfully!");
+					       }else if(json.status==0){
+					    	   showPopup("Already Updated!");
+					       }else{
+					    	   showPopup("Error Occoured!");
+					       }
+					    }
+					);
 				}
 			},
 			getUserDetails : function(){
 				var self =this;
-				var url = "http://localhost/vac/json/user.php" 
-				return $.ajax({
-					   	type: 'GET',
-					   	crossDomain: true,
-					    url: url,
-					    data : getStorage('mobile'),
-					    async: true,
-					    jsonpCallback: 'jsonCallback',
-					    contentType: "application/json",
-					    dataType: 'jsonp',
-					    success: function(json) {
-					       if(json.status=="1"){
+				var url = "http://localhost/vac/json/user.php";
+				return utilObj.exchangeDataFromServer('GET',url,getStorage('mobile'),function(json) {
+				       if(json.status=="1"){
 					    	  self.userInfo = json.data[0];
 					       }else{
 					    	   showPopup("Error Occoured!");
 					       }
-					    },
-					    error: function(jqXHR, textStatus, errorThrown) {
-					    	  console.log(textStatus, errorThrown);
-					   	}
-				});
-			},
-			validateInputs : function(inputArr){
-				for(var i=0;i<inputArr.length;i++){
-					if(!$("#"+inputArr[i].name)[0].checkValidity()){
-						$("#"+inputArr[i].name).parent().removeClass('has-error').addClass('has-error');
-						$("#"+inputArr[i].name).focus();
-						return false;
-					}else{
-						$("#"+inputArr[i].name).parent().removeClass('has-error');
-					}
-				}
-				return true;
+					    }
+				);
 			}
 	};
 	return new userDetails();

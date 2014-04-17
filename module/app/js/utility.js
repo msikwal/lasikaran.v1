@@ -4,16 +4,21 @@ define(function(require){
 			exchangeDataFromServer : function(method,url,paramArr,successCallback){
 					return $.ajax({
 						   	type: method,
+						   	beforeSend: function (request)
+						    {
+						        request.setRequestHeader('HTTP_X_REQUESTED_WITH', 'CUSTOM-HEADER-VALUE');
+						        console.log("request===",request);
+						    },
 						   	crossDomain: true,
 						    url: url,
-						    data : paramArr,
+						    //data : paramArr,
 						    async: false,
 						    jsonpCallback: 'jsonCallback',
 						    contentType: "application/json",
 						    dataType: 'jsonp',
 						    success: successCallback,
 						    error: function(jqXHR, textStatus, errorThrown) {
-						    	showPopup("Failed!!!!!!!!!!");
+						    	showPopup("Failed!!!!!!!!!!"+jqXHR+ textStatus+ errorThrown);
 						   	}
 					})
 			},

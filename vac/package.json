@@ -1,0 +1,17 @@
+{
+  "name": "vac",
+  "version": "0.0.0",
+  "description": "Anything",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": "",
+  "author": "Mahesh",
+  "license": "BSD",
+  "devDependencies": {
+    "grunt": "~0.4.4",
+    "grunt-cli": "~0.1.13",
+    "grunt-contrib-uglify": "~0.2.7"
+  }
+}

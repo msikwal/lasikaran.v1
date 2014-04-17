@@ -1,0 +1,23 @@
+Time : 10:48:53
+SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '2014-03-04-6' for key 'child_id'
+Raw SQL : INSERT INTO child_details(child_name,birth_date,parent_id,gender) VALUES(:child_name,:birth_date,:parent_id,:gender)
+
+Time : 10:45:12
+SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '2014-03-04' for key 'birth_date'
+Raw SQL : INSERT INTO child_details(child_name,birth_date,parent_id,gender) VALUES(:child_name,:birth_date,:parent_id,:gender)
+
+Time : 10:45:01
+SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '2014-03-04' for key 'birth_date'
+Raw SQL : INSERT INTO child_details(child_name,birth_date,parent_id,gender) VALUES(:child_name,:birth_date,:parent_id,:gender)
+
+Time : 10:29:36
+SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '2014-03-18' for key 'birth_date'
+Raw SQL : INSERT INTO child_details(child_name,birth_date,parent_id,gender) VALUES(:child_name,:birth_date,:parent_id,:gender)
+
+Time : 10:28:30
+SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '2014-03-05' for key 'birth_date'
+Raw SQL : INSERT INTO child_details(child_name,birth_date,parent_id,gender) VALUES(:child_name,:birth_date,:parent_id,:gender)
+
+Time : 10:28:21
+SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '2014-03-05' for key 'birth_date'
+Raw SQL : INSERT INTO child_details(child_name,birth_date,parent_id,gender) VALUES(:child_name,:birth_date,:parent_id,:gender)

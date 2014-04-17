@@ -30,10 +30,10 @@ define(function(require){
 				var url,inputArr;
 				if(self.pagetoLoad=="login"){
 					inputArr = $("#log_frm").serializeArray();
-					url = "http://localhost/vac/json/authUser.php?mode=log&"+Math.random();
+					url = "http://127.0.0.1/vac/json/authUser.php?mode=log&"+Math.random();
 				}else{
 					inputArr = $("#reg_frm").serializeArray();
-					url = "http://localhost/vac/json/authUser.php?mode=reg"+Math.random();
+					url = "http://127.0.0.1/vac/json/authUser.php?mode=reg"+Math.random();
 				}	
 				if(utilObj.validateInputs(inputArr)){
 					utilObj.exchangeDataFromServer('GET',url,inputArr,function(json) {

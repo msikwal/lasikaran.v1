@@ -1,0 +1,35 @@
+Time : 12:51:11
+SQLSTATE[HY000]: General error: 2031 
+Raw SQL : SELECT a.child_name, a.birth_date, b . * FROM child_details a, msg_schedule_master b WHERE a.parent_id = b.user_id AND b.msg_type = 'child' AND a.parent_id =:user_id ORDER BY a.birth_date DESC
+
+Time : 12:50:51
+SQLSTATE[HY000]: General error: 2031 
+Raw SQL : SELECT a.child_name, a.birth_date, b . * FROM child_details a, msg_schedule_master b WHERE a.parent_id = b.user_id AND b.msg_type = 'child' AND a.parent_id =:user_id ORDER BY a.birth_date DESC
+
+Time : 12:50:02
+SQLSTATE[HY000]: General error: 2031 
+Raw SQL : SELECT a.child_name, a.birth_date, b . * FROM child_details a, msg_schedule_master b WHERE a.parent_id = b.user_id AND b.msg_type = 'child' AND a.parent_id =:user_id ORDER BY a.birth_date DESC
+
+Time : 12:49:53
+SQLSTATE[HY000]: General error: 2031 
+Raw SQL : SELECT a.child_name, a.birth_date, b . * FROM child_details a, msg_schedule_master b WHERE a.parent_id = b.user_id AND b.msg_type = 'child' AND a.parent_id =:user_id ORDER BY a.birth_date DESC
+
+Time : 12:45:57
+SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '0000-00-00-1' for key 'child_id'
+Raw SQL : INSERT INTO child_details(child_name,birth_date,parent_id,gender) VALUES(:child_name,:birth_date,:parent_id,:gender)
+
+Time : 12:44:39
+SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '0000-00-00-1' for key 'child_id'
+Raw SQL : INSERT INTO child_details(child_name,birth_date,parent_id,gender) VALUES(:child_name,:birth_date,:parent_id,:gender)
+
+Time : 12:43:47
+SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '0000-00-00-1' for key 'child_id'
+Raw SQL : INSERT INTO child_details(child_name,birth_date,parent_id,gender) VALUES(:child_name,:birth_date,:parent_id,:gender)
+
+Time : 12:43:30
+SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '0000-00-00-1' for key 'child_id'
+Raw SQL : INSERT INTO child_details(child_name,birth_date,parent_id,gender) VALUES(:child_name,:birth_date,:parent_id,:gender)
+
+Time : 12:42:28
+SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '0000-00-00-1' for key 'child_id'
+Raw SQL : INSERT INTO child_details(child_name,birth_date,parent_id,gender) VALUES(:child_name,:birth_date,:parent_id,:gender)
