@@ -39,7 +39,6 @@ define(function(require){
 				var renderComp  = $(this).text().toLowerCase();
 				if(renderComp==="doctor"){
 					doctor.init();
-					vacDetails.init();
 				}else if(renderComp==="user"){
 					user.init();
 				}else if(renderComp==="dashboard"){

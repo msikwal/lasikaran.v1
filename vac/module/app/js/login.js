@@ -10,7 +10,7 @@ define(function(require){
 			init : function (page){
 				this.pagetoLoad = page;
 				this.render();
-				this.registerEvents();
+				
 			},
 			render : function (){
 				if(this.pagetoLoad=="login"){
@@ -18,7 +18,7 @@ define(function(require){
 				}else{
 					$(".util-container").html(Handlebars.compile(tmpl_r));
 				}
-				
+				this.registerEvents();
 			},
 			registerEvents : function (){
 				var self = this;
@@ -33,8 +33,8 @@ define(function(require){
 					url = "http://10.90.18.174/vac/json/authUser.php?mode=log&"+Math.random();
 				}else{
 					inputArr = $("#reg_frm").serializeArray();
-					url = "http://10.90.18.174/vac/json/authUser.php?mode=reg"+Math.random();
-				}	
+					url = "http://10.90.18.174/vac/json/authUser.php?mode=reg&"+Math.random();
+				}
 				if(utilObj.validateInputs(inputArr)){
 					/*utilObj.exchangeDataFromServer('GET',url,inputArr,function(json) {
 					       if(json.status!==0){
@@ -57,14 +57,20 @@ define(function(require){
 						    contentType: "application/json",
 						    dataType: 'json',
 						    success: function(json) {
-						       if(json.status!==0){
-						    	   self.userInfo.mobile = $("#mobile_num").val();
-						    	   self.userInfo.gId 	= json.status;
-						    	   self.userInfo.token 	= json.authToken;
-						    	   setStorage('mobile',self.userInfo);
-						    	   menuObj.init();
+						       if(json.status===1){
+						         if(self.pagetoLoad=="login"){
+						           self.userInfo.mobile = $("#mobile_num").val();
+						           self.userInfo.gId 	= json.gid;
+						           self.userInfo.token 	= json.authToken;
+						           setStorage('mobile',self.userInfo);
+						           menuObj.init();
+						         }else{
+						           showPopup("Registration Done Successfully!");
+						           self.pagetoLoad ="login";
+						           self.render();
+						         }  
 						       }else{
-						    	   showPopup("Invalid Credentials !");
+						    	   showPopup(json.status);
 						       }   
 						    },
 						    error: function(jqXHR, textStatus, errorThrown) {

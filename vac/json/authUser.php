@@ -34,7 +34,7 @@ function RegisterUser($inputArr){
 				if($row_doc>0){
 					$arr = array('status' => 1);
 				}else{
-					$arr = array('status' => 0);
+					$arr = array('status' => "Error!!");
 				}
 			}	
 			return $arr;
@@ -58,11 +58,12 @@ function AuthUser($inputArr){
 				//change it when we implement sessions ...
 				setcookie("mytoken",$tokenVal);	
 				$arr = array(
-					'status' => $result[0]['group_id'],
+					'status' => 1,
+					'gid' => $result[0]['group_id'],
 					'authToken' => $tokenVal
 				);
 			}else{
-				$arr = array('status' => 0);
+				$arr = array('status' => "Invalid Credentials !");
 			}
 			return $arr;
 		}catch(Exception $e) {

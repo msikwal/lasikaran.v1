@@ -47,9 +47,11 @@ define(function(require){
 						utilObj.exchangeDataFromServer('GET',url,inputArr,function(json) {
 						       if(json.status==1){
 						    	   showPopup("Record Updated Successfully!!");
-						       }else{
-						    	   showPopup("Error Occoured!!");
-						       }
+						       }else if(json.status==0){
+	                   showPopup("Already Updated!");
+	                 }else{
+	                   showPopup("Error Occoured!");
+	                 }
 						    }
 						)
 				}

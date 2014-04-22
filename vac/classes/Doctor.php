@@ -41,11 +41,7 @@ class Doctor
 		//exit;
 		$update	 =  $this->db->query("UPDATE doc_details set first_name = :first_name,last_name = :last_name,email = :email,text_msg = :text_msg where mobile = :mobile ",$arrDoc); 
 		//echo"<pre>";
-		if($update===0){
-			return 1;
-		}else{
-			return 0;
-		}
+		return $update;
 		//var_dump($update);
 		//echo"</pre>";
 	}
@@ -55,7 +51,7 @@ class Doctor
 		$arrDoc 	=  array(
 					"doc_name"=>isset($arr['f_name']) ? $arr['f_name'] : "" ,
 					"mobile"=>isset($arr['mobile_num']) ?$arr['mobile_num'] : "",
-					"password"=>isset($arr['u_pass']) ? $arr['u_pass'] : "",
+					//"password"=>isset($arr['u_pass']) ? $arr['u_pass'] : "",
 					"email" => isset($arr['doc_email']) ? $arr['doc_email'] : "",
 					"address" =>isset($arr['address']) ? $arr['address'] : "" ,
 					"pincode" =>isset($arr['pincode']) ? $arr['pincode'] : "" ,
@@ -75,7 +71,7 @@ class Doctor
 		);
 		
 		$authObj->insertUserLogInDetails($arrLogin);	
-		$insert	 =  $this->db->query("INSERT INTO doc_details(first_name,mobile,password,email,address,pincode,location,phone,text_msg,per_patient_amt,registration_date,group_id) VALUES(:doc_name,:mobile,:password,:email,:address,:pincode,:location,:phone,:text_msg,:per_patient_amt,:registration_date,:group_id)",$arrDoc); 
+		$insert	 =  $this->db->query("INSERT INTO doc_details(first_name,mobile,email,address,pincode,location,phone,text_msg,per_patient_amt,registration_date,group_id) VALUES(:doc_name,:mobile,:email,:address,:pincode,:location,:phone,:text_msg,:per_patient_amt,:registration_date,:group_id)",$arrDoc); 
 		return $insert;
 	}
 }
